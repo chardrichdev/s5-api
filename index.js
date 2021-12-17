@@ -1,9 +1,13 @@
 const express = require("express");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
+const cors = require('cors');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+let test = '';
+let test2 = [];
 
 app.get('/', (req, res) => res.status(200).send({
   message: 'Welcome to our glorious app',
