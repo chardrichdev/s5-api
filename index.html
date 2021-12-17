@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Webhook Verifier</title>
+</head>
+<body>
+	<p id =  "result"></p>
+	<script> 
+		let result = document.getElementById('result')
+		fetch('https://gaffud-simple-express-api.herokuapp.com/result').then(res => res.json()).then(data=>{
+			console.log(data)
+			result.innerHTML = `action: ${data.action}, actor: ${data.actor.email}`
+		})
+	</script>
+	
+</body>
+</html>
