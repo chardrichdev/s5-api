@@ -13,10 +13,13 @@ app.get('/', (req, res) => res.status(200).send({
   message: 'Welcome to our glorious app',
 }));
 
-app.post("/", (req, res)=> {
+app.post("/result", (req, res)=> {
 	console.log(req.body);
-	res.send(`${req.body}`);
-})
+	test = req._body
+	test2.push(test)
+	console.log(deliverycache)
+	res.send(test);
+});
 app.listen(PORT, ()=>{
 	console.log(`Server running at port ${PORT}`)
 });
